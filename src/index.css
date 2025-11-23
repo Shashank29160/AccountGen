@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 231 48% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 15% 15%;
+
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 262 52% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 231 48% 48%;
+
+    --radius: 0.75rem;
+
+    /* Enterprise SaaS colors */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 220 15% 88%;
+    --status-active: 142 76% 36%;
+    --status-thinking: 45 93% 47%;
+    --agent-glow: 231 48% 48%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(231 48% 48%), hsl(262 52% 58%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 25% 97%), hsl(220 20% 94%));
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 220 15% 95%;
+
+    --card: 222 40% 14%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 222 40% 14%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 231 48% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 35% 18%;
+    --secondary-foreground: 220 15% 95%;
+
+    --muted: 222 35% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 262 52% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 35% 20%;
+    --input: 222 35% 20%;
+    --ring: 231 48% 58%;
+
+    /* Enterprise SaaS colors - dark mode */
+    --glass-bg: 222 40% 14%;
+    --glass-border: 222 35% 25%;
+    --status-active: 142 76% 46%;
+    --status-thinking: 45 93% 57%;
+    --agent-glow: 231 48% 58%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(231 48% 58%), hsl(262 52% 68%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 47% 11%), hsl(222 40% 14%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Glassmorphism utility */
+  .glass {
+    background: hsl(var(--glass-bg) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+  
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
